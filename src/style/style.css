@@ -45,6 +45,9 @@
   display: flex;
   justify-content: space-around;
 }
+.table .mmm h2 {
+  text-align: center;
+}
 .table .mmm .center {
   width: 30%;
 }/*# sourceMappingURL=style.css.map */

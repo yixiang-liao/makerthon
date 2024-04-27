@@ -72,6 +72,7 @@ const TableP = () => {
       <div className='table'>
         <div className='mmm'>
           <div className='center'>
+            <h2>木工</h2>
             <TableContainer component={Paper} className='tableA'>
               <Table aria-label="customized table">
                 <TableHead>
@@ -96,6 +97,7 @@ const TableP = () => {
             </TableContainer>
           </div>
           <div className='center'>
+            <h2>機工</h2>
             <TableContainer component={Paper} className='tableA'>
               <Table aria-label="customized table">
                 <TableHead>
@@ -120,6 +122,7 @@ const TableP = () => {
             </TableContainer>
           </div>
           <div className='center'>
+            <h2>文創</h2>
             <TableContainer component={Paper} className='tableA'>
               <Table aria-label="customized table">
                 <TableHead>
