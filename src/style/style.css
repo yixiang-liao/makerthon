@@ -1,0 +1,50 @@
+@charset "UTF-8";
+* {
+  font-family: 微軟正黑體;
+  font-weight: normal;
+  margin: 0px;
+}
+
+.title {
+  text-align: center;
+  height: 15vh;
+  padding: 6vh 0;
+  background-color: rgb(77, 149, 237);
+  top: -15vh;
+  border-radius: 0px 0px 100% 100%;
+  letter-spacing: 1vh;
+}
+.title h2 {
+  color: white;
+  font-size: 5vh;
+}
+
+.News {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.News .a {
+  background-color: rgb(196, 229, 255);
+  text-align: center;
+  padding: 1vh 1.5vh 1vh 2vh;
+  font-size: 5vh;
+  letter-spacing: 1vh;
+  margin-top: 2vh;
+  margin-right: 2vh;
+}
+.News .b {
+  font-size: 5vh;
+  letter-spacing: 1vh;
+}
+
+.table {
+  margin: 2vh 2vh;
+}
+.table .mmm {
+  display: flex;
+  justify-content: space-around;
+}
+.table .mmm .center {
+  width: 30%;
+}/*# sourceMappingURL=style.css.map */
