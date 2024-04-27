@@ -32,6 +32,7 @@ const TableP = () => {
     const [data, setData] = useState([]);
     const [Bdata, setBData] = useState([]);
     const [Cdata, setCData] = useState([]);
+    const [Ddata, setDData] = useState([]);
 
     useEffect(() => {
       const fetchData = (url, setDataFunc) => {
@@ -65,6 +66,11 @@ const TableP = () => {
       fetchData(
         'https://docs.google.com/spreadsheets/d/e/2PACX-1vQLeoKHXZi-jr312GHN7w7ExSHZxArIdt8qhPo_KVVSiZrBlIdH3gwL30Qd3PgJh8E-wVbbuoKkDU-E/pub?output=csv&gid=468671024',
         setCData
+      );
+
+      fetchData(
+        'https://docs.google.com/spreadsheets/d/e/2PACX-1vQLeoKHXZi-jr312GHN7w7ExSHZxArIdt8qhPo_KVVSiZrBlIdH3gwL30Qd3PgJh8E-wVbbuoKkDU-E/pub?output=csv&gid=1227004105',
+        setDData
       );
     }, []);
 
@@ -134,6 +140,31 @@ const TableP = () => {
                 </TableHead>
                 <TableBody>
                   {Cdata?.map((item, i) => (
+                    <StyledTableRow key={i}>
+                      <StyledTableCell component="th" scope="row" align="center">
+                        {item.using}
+                      </StyledTableCell>
+                      <StyledTableCell align="center">{item.CheckIn}</StyledTableCell>
+                      <StyledTableCell align="center">{item.wait}</StyledTableCell>
+                    </StyledTableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </TableContainer>
+          </div>
+          <div className='center'>
+            <h2>材料室</h2>
+            <TableContainer component={Paper} className='tableA'>
+              <Table aria-label="customized table">
+                <TableHead>
+                  <TableRow>
+                    <StyledTableCell align="center">使用中</StyledTableCell>
+                    <StyledTableCell align="center">可報到</StyledTableCell>
+                    <StyledTableCell align="center">候位中</StyledTableCell>
+                  </TableRow>
+                </TableHead>
+                <TableBody>
+                  {Ddata?.map((item, i) => (
                     <StyledTableRow key={i}>
                       <StyledTableCell component="th" scope="row" align="center">
                         {item.using}
