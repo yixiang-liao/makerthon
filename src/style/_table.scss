@@ -1,13 +1,12 @@
 .table{
     margin: 2vh 2vh;
-    .mmm{
-        display: flex;
-        justify-content: space-around;
-        h2{
-            text-align: center;
-        }
-        .center{
-            width: 20%;
-        }
+    width: auto;
+    h2{
+        text-align: center;
     }
+        .red{
+            text-align: center;
+            color: red;
+            font-weight: bold;
+        }
 }

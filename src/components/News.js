@@ -2,6 +2,18 @@ import React, { useState, useEffect } from 'react';
 import Papa from 'papaparse';
 
 const News = () => {
+  const [currentTime, setCurrentTime] = useState(
+    new Date().toLocaleTimeString(),
+  );
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTime(new Date().toLocaleTimeString());
+    }, 1000);
+
+    return () => clearInterval(interval);
+    }, []);
+
   const [data, setData] = useState([]);
   
   useEffect(() => {
@@ -34,12 +46,13 @@ const News = () => {
 
   return (
     <div className="News">
-      <div className="a">最新<br />公告</div>
+      <div className="a">最新公告</div>
       {data?.map((item, i) => (
         <div key={i} className="b">
           {item.Title}
         </div>
       ))}
+      <div className="c">{currentTime}</div>
     </div>
   );
 };

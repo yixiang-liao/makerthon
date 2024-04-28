@@ -1,18 +1,31 @@
 .News{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    font-size: 5vh;
+    letter-spacing: 1vh;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
     .a{
         background-color: rgb(196, 229, 255);
         text-align: center;
-        padding: 1vh 1.5vh 1vh 2vh;
-        font-size: 5vh;
-        letter-spacing: 1vh;
         margin-top: 2vh;
-        margin-right: 2vh;
+        padding: 1vh 1.5vh 1vh 2vh;
     }
     .b{
-        font-size: 5vh;
-        letter-spacing: 1vh;
+        margin-top: 2vh;
+        text-align: left;
+        width: 55%;
+        padding: 1vh 1.5vh 1vh 2vh;
+        background-color: white;
     }
+    .c{
+        margin-top: 2vh;
+        padding: 1vh 1.5vh 1vh 2vh;
+        background-color: #003566;
+        color: white;
+    }
+
 }

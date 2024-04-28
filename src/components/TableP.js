@@ -15,7 +15,7 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
       color: theme.palette.common.white,
     },
     [`&.${tableCellClasses.body}`]: {
-      fontSize: 14,
+      fontSize: 16,
     },
   }));
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
@@ -52,26 +52,34 @@ const TableP = () => {
           }
         );
       };
-
-      fetchData(
-        'https://docs.google.com/spreadsheets/d/e/2PACX-1vQLeoKHXZi-jr312GHN7w7ExSHZxArIdt8qhPo_KVVSiZrBlIdH3gwL30Qd3PgJh8E-wVbbuoKkDU-E/pub?output=csv&gid=1602056620',
-        setData
-      );
-
-      fetchData(
-        'https://docs.google.com/spreadsheets/d/e/2PACX-1vQLeoKHXZi-jr312GHN7w7ExSHZxArIdt8qhPo_KVVSiZrBlIdH3gwL30Qd3PgJh8E-wVbbuoKkDU-E/pub?output=csv&gid=1077283877',
-        setBData
-      );
-
-      fetchData(
-        'https://docs.google.com/spreadsheets/d/e/2PACX-1vQLeoKHXZi-jr312GHN7w7ExSHZxArIdt8qhPo_KVVSiZrBlIdH3gwL30Qd3PgJh8E-wVbbuoKkDU-E/pub?output=csv&gid=468671024',
-        setCData
-      );
-
-      fetchData(
-        'https://docs.google.com/spreadsheets/d/e/2PACX-1vQLeoKHXZi-jr312GHN7w7ExSHZxArIdt8qhPo_KVVSiZrBlIdH3gwL30Qd3PgJh8E-wVbbuoKkDU-E/pub?output=csv&gid=1227004105',
-        setDData
-      );
+  
+      const fetchAllData = () => {
+        fetchData(
+          'https://docs.google.com/spreadsheets/d/e/2PACX-1vQLeoKHXZi-jr312GHN7w7ExSHZxArIdt8qhPo_KVVSiZrBlIdH3gwL30Qd3PgJh8E-wVbbuoKkDU-E/pub?output=csv&gid=1602056620',
+          setData
+        );
+  
+        fetchData(
+          'https://docs.google.com/spreadsheets/d/e/2PACX-1vQLeoKHXZi-jr312GHN7w7ExSHZxArIdt8qhPo_KVVSiZrBlIdH3gwL30Qd3PgJh8E-wVbbuoKkDU-E/pub?output=csv&gid=1077283877',
+          setBData
+        );
+  
+        fetchData(
+          'https://docs.google.com/spreadsheets/d/e/2PACX-1vQLeoKHXZi-jr312GHN7w7ExSHZxArIdt8qhPo_KVVSiZrBlIdH3gwL30Qd3PgJh8E-wVbbuoKkDU-E/pub?output=csv&gid=468671024',
+          setCData
+        );
+  
+        fetchData(
+          'https://docs.google.com/spreadsheets/d/e/2PACX-1vQLeoKHXZi-jr312GHN7w7ExSHZxArIdt8qhPo_KVVSiZrBlIdH3gwL30Qd3PgJh8E-wVbbuoKkDU-E/pub?output=csv&gid=1227004105',
+          setDData
+        );
+      };
+  
+      fetchAllData(); // 立即获取一次数据
+  
+      const interval = setInterval(fetchAllData, 10000); // 每10秒钟获取一次数据
+  
+      return () => clearInterval(interval);
     }, []);
 
     return (
@@ -94,7 +102,7 @@ const TableP = () => {
                       <StyledTableCell component="th" scope="row" align="center">
                         {item.using}
                       </StyledTableCell>
-                      <StyledTableCell align="center">{item.CheckIn}</StyledTableCell>
+                      <StyledTableCell align="center red">{item.CheckIn}</StyledTableCell>
                       <StyledTableCell align="center">{item.wait}</StyledTableCell>
                     </StyledTableRow>
                   ))}
@@ -119,7 +127,7 @@ const TableP = () => {
                       <StyledTableCell component="th" scope="row" align="center">
                         {item.using}
                       </StyledTableCell>
-                      <StyledTableCell align="center">{item.CheckIn}</StyledTableCell>
+                      <StyledTableCell align="center red">{item.CheckIn}</StyledTableCell>
                       <StyledTableCell align="center">{item.wait}</StyledTableCell>
                     </StyledTableRow>
                   ))}
@@ -144,7 +152,7 @@ const TableP = () => {
                       <StyledTableCell component="th" scope="row" align="center">
                         {item.using}
                       </StyledTableCell>
-                      <StyledTableCell align="center">{item.CheckIn}</StyledTableCell>
+                      <StyledTableCell align="center red">{item.CheckIn}</StyledTableCell>
                       <StyledTableCell align="center">{item.wait}</StyledTableCell>
                     </StyledTableRow>
                   ))}
@@ -169,7 +177,7 @@ const TableP = () => {
                       <StyledTableCell component="th" scope="row" align="center">
                         {item.using}
                       </StyledTableCell>
-                      <StyledTableCell align="center">{item.CheckIn}</StyledTableCell>
+                      <StyledTableCell align="center red">{item.CheckIn}</StyledTableCell>
                       <StyledTableCell align="center">{item.wait}</StyledTableCell>
                     </StyledTableRow>
                   ))}
